@@ -1,24 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "Failed Domain Suggestion Extension",
+  "name": "Website Unavailable Helper",
   "version": "1.0",
-  "description": "Detects failed domains and suggests alternatives using chrome.storage.",
-  "permissions": ["storage", "webNavigation", "webRequest"],
-  "host_permissions": ["<all_urls>"],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    }
-  },
+  "description": "Suggests alternative websites when a domain fails to load",
+  
+  "permissions": [
+    "webRequest",
+    "webNavigation",
+    "storage",
+    "tabs"
+  ],
+  
+  "host_permissions": [
+    "*://*/*"
+  ],
+  
   "background": {
     "service_worker": "background.js"
   },
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Website Unavailable Helper"
   }
 }
